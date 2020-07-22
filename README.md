@@ -1,3 +1,4 @@
+### This is the official Microsoft ADAL framework, v4.0.7, downloaded from Microsoft. It has some small modifications that suited my needs
 ---
 
 This library, ADAL for iOS and macOS, will no longer receive new feature improvements. Instead, use the new library
