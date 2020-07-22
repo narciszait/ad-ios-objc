@@ -1,4 +1,6 @@
 ### This is the official Microsoft ADAL framework, v4.0.7, downloaded from Microsoft. It has some small modifications that suited my needs
+### The rest of the readme file is intact.
+### The purpose of this repo is to have a backup of the modified framework
 ---
 
 This library, ADAL for iOS and macOS, will no longer receive new feature improvements. Instead, use the new library
