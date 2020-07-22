@@ -1,0 +1,458 @@
+Version 4.0.7 (04.17.2020)
+------
+* Remove ADTokenCache.h dependency from iOS library since that header only exists on macOS (#1526)
+* Remove ADAL SHA-1 dependency (#1525)
+
+Version 4.0.6 (02.21.2020)
+------
+* Support passing refresh token in the header to avoid extra prompts (#1495)
+* Added ADAL migration info to readme (#1518)
+
+Version 4.0.5 (01.20.2020)
+------
+* Verify broker schemes are correctly registered (#1497)
+* Enable dogfood authenticator support by default (#1498)
+* Fix an ADAL presentation bug when providing but webView and parentController resulted in an empty screen (#1500)
+* Use mobile webview content mode on iPads (#1501)
+
+Version 4.0.4 (10.23.2019)
+-------
+* Fix ADAL failure on PkeyAuth request when there's no WPJ entitlement
+* Prevent auth controller dismissal by swiping down on iOS 13
+* Support removing RT from other accessors
+
+Version 4.0.3 (09.18.2019)
+--------
+* Added support brokered authentication with UISceneDelegate on iOS 13
+* Updated readme
+* Fixed nullability for keychainGroup setting
+
+Version 4.0.2 (09.04.2019)
+--------
+* Support new iOS 13 capable broker 
+
+Version 4.0.1
+------------
+* Apply hotfix 2.7.8 to skip user Id matching check for an acquire token
+silent call. 
+* Apply hotfix 2.7.9 for Mac OS to query WPJ cert using issuers from authentication challenge
+* Improve access token retrieval when enrollmentID is present
+* Annotate all public ADAL APIs with nullability specifiers
+
+Version 4.0.0 (12.21.2018)
+-------------
+* Support any version of server telemetry (#1287)
+* Don't use certificate from identity when creating credential in clientTLS handler (#1286)
+* Use WKWebView instead of UIWebView for iOS and WebView for macOS (#1262)
+* Pass claims challenge to the token endpoint (#1274)
+* ADAL now supports iOS 10+ and macOS 10.11+ only
+* WKWebView drops network connection if device got locked on iOS 12. It is by design and not configurable.
+
+Version 2.7.17 (01.20.2020)
+------
+* Verify broker schemes are correctly registered (#1497)
+* Enable dogfood authenticator support by default (#1498)
+* Fix an ADAL presentation bug when providing but webView and parentController resulted in an empty screen (#1499)
+
+Version 2.7.16 (10.18.2019)
+-------
+* Fix ADAL failure on PkeyAuth request when there's no WPJ entitlement
+* Prevent auth controller dismissal by swiping down on iOS 13
+* Support removing RT from other accessors
+
+Version 2.7.15 (09.17.2019)
+--------
+* Added support brokered authentication with UISceneDelegate on iOS 13
+* Updated readme
+* Fixed nullability for keychainGroup setting
+
+Version 2.7.14 (08.13.2019)
+--------
+* Support new iOS 13 capable broker
+
+Version 2.7.13 (07.31.2019)
+---------
+* Improve access token retrieval when enrollmentID is present
+* Annotate all public ADAL APIs with nullability specifiers
+
+Version 2.7.12 (05.30.2019)
+----------
+* Make cache more resilient to corrupt data with nulls (#1419)
+
+Version 2.7.11 (05.14.2019)
+-----------
+* Fix issues when ADAL was trying to handle MSAL broker responses.
+
+Version 2.7.10 (04.24.2018)
+-----------
+* Hotfix to add compiler flag to disable Kerberos (#1401)
+* Nullability fixes (#1404)
+* Better handle system errors at token redemption (#1400)
+
+Version 2.7.9 (03.06.2018)
+-----------
+* Hotfix for Mac OS to query WPJ cert using issuers from authentication challenge.
+
+Version 2.7.8
+-----------
+* Hotfix to skip user Id matching check for an acquire token silent call.
+
+Version 2.7.7 (12.21.2018)
+-----------
+* Don't log ADAL version on load (#1359)
+* Fixed userId returned for ADFS onPrem scenarios (#1357)
+* Return user displayable ID for Intune app protection scenarios (#1358)
+
+Version 2.7.6 (29.11.2018)
+-----------
+* Don't dispatch ADAL callback to the main thread (#1350)
+* Changed teamIDHint to avoid conflicts with other SDKs
+
+Version 2.7.5 (11.02.2018)
+-----------
+* Don't fail acquireToken when saving to cache fails (#1338)
+
+Version 2.7.4 (10.30.2018)
+-----------
+* Added support to send claims to the token endpoint (#1272)
+* Patch teamID when it was written with incorrect accessible type by other SDKs (#1328)
+* Improve co-existence with ADAL.NET
+
+Version 2.6.9 (04.05.2019)
+-----------
+* Fix issues when server returns "null" fields in the token response
+
+Version 2.6.8 (12.21.2018)
+-----------
+* Return user displayable ID for Intune app protection scenarios (#1358)
+
+Version 2.6.7 (11.29.2018)
+------------
+* Changed teamIDHint to avoid conflicts with other SDKs
+
+Version 2.6.6 (09.10.2018)
+------------
+* Added support to send claims to the token endpoint (#1272)
+* Patch teamID when it was written with incorrect accessible type by other SDKs (#1328)
+* Improve co-existence with ADAL.NET
+
+Version 2.7.3
+------------
+* Fix occasional keychain util crash #1311
+
+Version 2.7.2 
+-------------
+* Fix issues with the iOS library compilation output.
+
+Version 2.7.1 
+-------------
+* Fix issues with the framework compilation and add correct bundle version to
+the framework
+
+Version 2.7.0 (07.23.2018)
+-------------
+* Add new API to skip access token in cache by passing a forceRefresh parameter (#1234)
+* Intune enrollment id support for MAM scenarios (#1232)
+* Cache co-existence with apps using MSAL Objective-C and MSAL .NET SDKs
+
+Version 2.6.6 (09.10.2018)
+------------
+* Added support to send claims to the token endpoint (#1272)
+
+Version 2.6.5 (08.01.2018)
+------------
+* Skip tombstones in macOS token cache (#1258)
+
+Version 2.6.4 (07.13.2018)
+-------------
+* Improved Negotiate handler to decide if it should use default handling or reject for macOS authentication (#1181)
+* ADCertAuthHandler should match preferred identity by both host and URL for macOS certificate based authentication (#1183)
+* Reject protection space when no suitable cert is found for macOS certificate based authentication (#1190)
+* Add new API to skip access token in cache by passing a forceRefresh parameter (#1205)
+* intune enrollment id support (#1218, #1219, #1209, #1210, #1211, #1212, #1217)
+
+Version 2.6.3 (04.24.2018)
+-------------
+* Fixed iOS 11.3 issue, when backgrounding application during the interactive authentication fails the login flow (#1196)
+
+Version 2.6.2 (03.27.2018)
+-------------
+* Fix a bug in remove APIs that could cause user not being completely removed (#1175)
+* Send openid scope for acquireTokenWithRefreshToken API (#1172)
+
+Version 2.6.1 (02.15.2018)
+-------------
+* Fix 'UI API called on a background thread' warning in ADBrokerHelper (#1100)
+
+Version 2.6.0 (01.16.2018)
+-------------
+* Improved handling for guest users (#1078)
+* instance_aware=true flow support for sovereign clouds (#1083)
+* Added PII flag to logs and telemetry (#1088, #1091, #1093)
+* Added an API to remove all tokens for a specified user Id (#1097)
+* Return error headers to the app developer (#1102)
+* Don’t block loading of about:blank pages (#1118)
+
+Version 2.5.4 (12.11.2017)
+-------------
+* Look for the correct error field for authority metadata discovery request (#1116)
+
+Version 2.5.3 (11.17.2017)
+-------------
+* Parse auth challenges where Bearer is not the first challenge. (#1042)
+
+Version 2.5.2 (11.06.2017)
+-------------
+* Improved SSO capabilities between different authority aliases (e.g. login.windows.net and login.microsoftonline.com) (#1060, #1061, #1069, #1079)
+* Added additional server telemetry (#1041)
+* Fixed a token persistence issue for assertion flow (#1004)
+* Added additional NSNull check, when parsing server responses (#1055)
+
+
+Version 2.5.1 (07.10.2017)
+-------------
+* Add support for applications that use the handleOpenURL:UIApplicationDelegate method for accepting URL requests (#1000)
+* Add support for sending conditional access claims to acquire token call(#996)
+* (Mac) Added CBA Support (#993)
+* Handle www-authenticate:Negotiate properly when together with NTLM  (#979)
+* Fixed compilation error in Swift caused by ADErrorCode enum (#990)
+* (Mac) Fixed authentication window position when using multiple monitors (#988)
+* Fixed crashes caused by “ext_expires_in” with more robust parsing (#987)
+* ADWebRequest header fields are now public and editable (#975)
+
+
+Version 2.5.0 (05.18.2017)
+-------------
+* (Mac) Conditional access support (#865)
+* Added "login.microsoftonline.us" to the hardcoded whitelist of AAD Authorities (#948)
+* Fixed memory leaks in ADWebRequest (#958)
+* Improved Swift support - Nullability specifiers update (#936), Swift sample update (#936, #949)
+
+Version 2.4.1 (03.29.2017)
+-------------
+* Fixed a bug that could cause 'Collection was mutated while being enumerated' exceptions (#932)
+* Fixed a query parameter decoding issue (#926)
+
+
+Version 2.4.0 (03.21.2017)
+-------------
+* ADAL no longer supports 32-bit macOS applications (#755)
+* ADFS on-premises authority validation (#529)
+* Added ADTelemetry interface for app developers to consume ADAL telemetry in their telemetry pipelines (#859)
+* Fixed documentation warnings in ADAL headers (#900)
+* Replaced NSURLConnection (which was deprecated in iOS 9) usage with NSURLSession (#646)
+* Removed iOS 9 deprecated API usage in NSString+ADHelperMethods and NSURL+ADHelperMethods (#889, #914)
+
+
+Version 2.3.1 (02.09.2017)
+-------------
+* Fixed a thread safety issue in ADTelemetry that occasionally caused crashes (#882)
+* Removed the 5-min-timeout timer on webview interaction (#862)
+* Fixed a bug that caused NTLM dialog failed to show when pass-in webview was used (#892)
+
+Version 2.3.0 (01.17.2017)
+-------------
+* Added the extendedLifetimeEnabled property on ADAuthenticationContext to allow ADAL to return tokens in the extended expiration window during an AAD service outage. (#643)
+* Fixed crashes caused by the NTLM dialog being launched on a background thread on iOS (#849) and Mac (#801)
+* (iOS) Replaced deprecated UIAlertView usage with UIAlertController (#849)
+* (Mac) Added the +[ADTokenCache defaultTokenCache] convenience method for accessing the default ADAL cache. (#808)
+* (Mac) ADAL on macOS no longer errors out immediately when receiving a conditional access request. Erroring out immediately was preventing ADAL from being able to continue further with authentication methods that might still work. (#804)
+* Added error checking on passed in extraQueryParameters to prevent crashes when invalid query parameters are passed in. (#819, #822)
+ 
+
+Version 2.2.7 (10.19.2016)
+-------------
+* Improved the robustness of the broker message parser (#779)
+* Created more fine grained error result codes for the broker message parser (#802)
+* Fixed an NSNotificationCenter observer memory leak (#778)
+
+Version 2.2.6 (09.20.2016)
+-------------
+* Renamed an internal API that shared the name with a banned private Apple API causing some app store rejections. (#776) 
+
+Version 2.2.5 (09.09.2016)
+-------------
+* Fixed an issue where NTLM authentication did not show if the authentication prompt came after the first redirect.
+* Switched to a single framework/library build that can be included in both applications and extensions
+
+Version 2.2.4 (08.23.2016)
+-------------
+* Fixed an issue caused with some redirects where the webview would not update the base URL properly.
+
+
+Version 2.2.3 (08.22.2016)
+-------------
+* Fixed an issue where federated endpoints redirecting to URLs that would trigger URL canonicalization would cause ADAL to go to that endpoint twice. This was causing some non-ADFS federated endpoints to fail.
+* (Mac Only) Fixed thread safety issues in -[ADTokenCache serialize] (#710)
+* Allow redirect URIs that start with "http://". however we still will not traverse those pages but we will get the authorization code from the URL. (#720)
+* Separate out the library build targets so applications including ADAL's project file as a subproject can pull in either the Framework cleanly. However using both the framework and static library can still cause issues. This is an unavoidable side effect of the header search order in Xcode. (#693)
+* Created a separate framework build target for iOS extension-safe ADAL.
+* Properly set the minimum supported SDK version for ADAL framework to iOS 8.0 (#694)
+* Added a Swift Sample App (#97)
+
+
+Version 2.2.2 (07.18.2016)
+-------------
+* Fixed a newly-uncovered issue where ADAL could not get the application's code signing Team ID while the device is locked. (#698)
+
+Version 2.2.1 (06.30.2015)
+-------------
+* Added support for iOS 9's -application:openURL:options: method (#662)
+* Fixed a bug that caused the NTLM dialog to not appear (#666)
+* Properly handle keychain errors that happen while retrieving Workplace Join information (#685)
+* Added support for ADAL to use Keychain access groups in the Simulator when available (#670)
+* Fixed the include path when consuming ADAL as a static library (#630)
+* Error codes will appear as strings (ie. "AD_ERROR_SERVER_USER_INPUT_REQUIRED") in error messages now.
+* Limited support for App Extensions. ADAL now has an app extension safe build in both the Xcode project (iOS static lib only) and CocoaPod. Interactive Auth is not supported in extensions as well. (#560)
+* Fixed a bug that caused ADAL to erroneously unpercent encode query parameters being passed on. (#689)
+
+
+Version 2.2.0 (05.16.2016)
+-------------
+* Added support for Family of Client IDs among Microsoft apps
+* (iOS Only) Added +[ADKeychainTokenCache defaultKeychainCache] and +[ADKeychainTokenCache keychainCacheForGroup:] APIs to make how to use the keychain token cache APIs more discoverable.
+* Fixed a crash on first use of the broker when creating a broker key
+* Added extensibility properties to token cache items to allow for forwards compatibility in the future.
+* Set the 'Skip Install' setting to 'YES' on all framework and static library targets.
+
+
+Version 2.1.2 (05.02.2016)
+-------------
+* Restored the fix for ADKeychainTokenCache that was overridden in a git merge.
+
+
+Version 2.1.1 (04.27.2016)
+_____________
+* Added underlying errors to ADAuthenticationErrors when returning user interaction required
+* Fixed a crash in ADKeychainTokenCache
+* Add Azure Germany, and login-us to the list of known good Azure AD Authorities
+* Refresh Tokens will only be removed on 'invalid_grant' OAuth errors now.
+
+Version 2.1.0 (04.15.2016)
+_____________
+(See the GitHub release page for a more detailed list)
+* Mac OS X Support
+* Brokered Authentication support with Azure Authenticator
+* Support for Conditional Access in 3rd Party apps via Azure Authenticator
+* Support for User Cert Based Authentication via Azure Authenticator
+* Changed ADLogger callback to allow more data to be passed through for telemetry purposes
+* Logging improvements
+* Token Cache API changes
+* Renamed ADKeychainTokenCacheStore to ADKeychainTokenCache
+* Renamed ADTokenCacheStoreItem to ADTokenCacheItem
+* Renamed ADAuthenticationBroker to ADWebAuthController
+* Changed APIs in ADAuthenticationSettings
+* Added ADUserIdentifier API.
+
+Version 1.2.7 (05.26.2016)
+--------------------------
+(Note: We recommend using 2.2 or later, as support for 1.2.x will end in the near future.)
+* Allow device authentication from the token endpoint for Microsoft applications
+
+Version 1.2.6 (04.12.2016)
+--------------------------
+* Remove broker code that had been merged in pre-maturely.
+* Whitelist "about:blank" when checking for insecure connections
+
+Version 1.2.5 (05.16.2016)
+--------------------------
+* Fix for a crash in ADClientMetrics when using ADAL directly against ADFS
+
+Version 1.2.4 (05.15.2015)
+--------------------------
+* Support NTLM for developers who provide custom webview.
+
+Version 1.2.3 (05.18.2015)
+--------------------------
+* Fix a bug (#316) where non-ASCII input would result in a nil base64 value.
+
+Version 1.2.2 (03.23.2015)
+--------------------------
+* Fix a bug where a webpage would show blank screen when custom headers were sent.
+
+Version 1.2.1 (02.18.2015)
+--------------------------
+* Fix a crash in iOS 7.1 when NTLM alert is shown.
+
+Version 1.2.0 (02.05.2015)
+--------------------------
+* Support for NTLM login.
+* Addition of a master header file (ADAL.h) for easy developer access to the API.
+* Fix to cancel the webview when the user clicks "Enroll" button to initiate workplace join.
+* Added "login.microsoftonline.com" to the hardcoded whitelist of AAD Authorities (#246)
+* Change default keychain accessibility attribute to kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly (#245)
+
+Version 1.1.12 (12.20.2014)
+---------------------------
+* Fix to ignore navigation type in the webview. It was blocking users from enrolling their device.
+
+Version 1.1.11 (12.11.2014)
+---------------------------
+* Added support for client assertion to acquire token.
+* Client Metric reporting support for improved service analytics.
+* Updated logging messages to include ADAL version and correlation id (#230)
+* ADAL now always sends PKeyAuth header (#229)
+
+Version 1.1.10 (11.06.2014)
+---------------------------
+* Fixed incorrect casing in the import that could break the build on the case sensitive file system.
+* Commented code cleanup.
+* Fixed Issue #180.
+* Fix bridging between non-ARC and ARC when calling.SecCertificateBopySubjectSummary and SecCertificateCopyData.
+* Fixed Issue #63.
+* Fixed Issue #182.
+* Fixed Issue #138.
+
+
+Version 1.1.9 (10.19.2014)
+--------------------------
+Hotfix to address the incorrect casing in an import statement. Without this fix, the build will fail on case insensitive file systems.
+
+
+Version 1.1.8 (10.18.2014)
+--------------------------
+This release removes the OpenSSL dependency that was used to read certificate information.
+
+
+Version 1.1.7 (10.06.2014)
+--------------------------
+Added a fix for leaky timers in case of server redirects.
+
+
+Version 1.1.6 (09.30.2014)
+--------------------------
+Fixed pod spec with OpenSSL dependency.
+
+
+Version 1.1.5 (09.23.2014)
+--------------------------
+* Hotfix for double free error
+* Removing extraction of private key bits.
+* ParentController dismissal fix.
+
+
+Version 1.1.4 (09.21.2014)
+--------------------------
+This release includes bug fixes for PkeyAuth protocol. Given below is a cumulative list of fixes and updates in 1.1.x releases.
+
+* Support for PKeyAuth protocol to acquire conditional access claims (device claims). Developer should add "com.microsoft.workplacejoin" to entitlements.
+* Added default keychain shared group name (com.microsoft.adalcache) for cache storage and sharing.
+* Support for configurable HTTP timeouts.
+* Fixed the issue where web request will not time out due to 100% network loss.
+* Removed PII indentifying log statements.
+* Fixed the issue where the root view controller was being dismissed upon web view cancellation.
+* Fixed memory leaks and added allocation checks.
+* Fixed cache issue where adal would error out while getting token for 3rd unique user.
+
+Version 1.1.3 (09.16.2014)
+--------------------------
+* Support for PKeyAuth
+
+
+Version 1.0.2 (07.15.2014)
+--------------------------
+ADAL for iOS GA Release
+
+Version 0.5-alpha (01.21.2014)
+------------------------------
+ADAL for iOS Preview

@@ -1,0 +1,9 @@
+//
+//  adal__common.xcconfig
+//
+
+#include "../IdentityCore/IdentityCore/xcconfig/identitycore__common.xcconfig"
+
+IDCORE_PATH = IdentityCore/IdentityCore
+OTHER_CFLAGS=$(inherited) -fstack-protector-strong
+GCC_TREAT_WARNINGS_AS_ERRORS = YES
